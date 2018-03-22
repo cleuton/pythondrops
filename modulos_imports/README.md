@@ -65,13 +65,13 @@ if __name__ == '__main__':
     calcRaizes(a,b,c)
 ```
 
-**__name__**
+**```__name__```**
 
-Sabe o que é aquele "```if __name__ == '__main__'˜˜˜"? Se você executar o módulo que contém esse código, por exemplo: python script.py, ele vai executar todos os comandos imediatos que existirem dentro dele. É como se fosse um "método main()" em Java. 
+Sabe o que é aquele "```if __name__ == '__main__'```"? Se você executar o módulo que contém esse código, por exemplo: python script.py, ele vai executar todos os comandos imediatos que existirem dentro dele. É como se fosse um "método main()" em Java. 
 
 O problema é que isso acontece se você importar esse módulo dentro de outro módulo... Neste caso, a execução dos comandos é indesejada.
 
-Para evitar isso, usamos um "if" testando a variável especial "__name__" que contém o nome do módulo. Se ele for executado diretamente pelo python, então seu nome será "__main__". Caso contrário, será o seu próprio nome. Confuso? No repositório há dois arquivos: "```puro.py```" e "```importado.py```". Rode primeiro o **puro.py**:
+Para evitar isso, usamos um "if" testando a variável especial "```__name__```" que contém o nome do módulo. Se ele for executado diretamente pelo python, então seu nome será "```__main__```". Caso contrário, será o seu próprio nome. Confuso? No repositório há dois arquivos: "```puro.py```" e "```importado.py```". Rode primeiro o **puro.py**:
 ```
 python puro.py
 ```
