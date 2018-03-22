@@ -13,67 +13,57 @@
 Um módulo é um arquivo que contém código python, com uma determinada função. Podemos criar módulos para compartilhar código-fonte entre diversos programas de nossa aplicação. Vamos supor um programa que calcule as raízes de uma equação do segundo grau, segundo a fórmula de Bhaskara: 
 
 ![](./bhaskara.png)
+```
+import math
+a = 1
+b = -5
+c = 6
+x=(b**2)-(4*a*c)
+if x<0:
+        print("Raiz negativa nao pode ser extraida.")
+else:
+    x=math.sqrt(x)
+    x1=(-b+x)/(2*a)
+    x2=(-b-x)/(2*a)
+print("\n\nX' = %s \nX'' = " % x1, x2)
+```
 
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js">
-</script>
-
-<div data-datacamp-exercise data-lang="python">
-    <code data-type="sample-code">
-        import math
-        a = 1
-        b = -5
-        c = 6
-        x=(b**2)-(4*a*c)
-        if x<0:
-                print("Raiz negativa nao pode ser extraida.")
-        else:
-            x=math.sqrt(x)
-            x1=(-b+x)/(2*a)
-            x2=(-b-x)/(2*a)
-        print("\n\nX' = %s \nX'' = " % x1, x2)
-    </code>
-</div>
-
-*Experimente clicar no botão "RUN" e executar o programa.*
 
 Parece "legal", não? E se quisermos calcular as raízes com outros coeficientes? E se quisermos criar uma página Web e obter as raízes passando para um Servidor python? Podemos **modularizar** este programa... Por exemplo, existem pelo menos 3 módulos: 
 - Obter os coeficientes;
 - Calcular o delta;
 - Calcular as raízes.
 
-Vamos ver um exemplo com os três módulos:
-
-<div data-datacamp-exercise data-lang="python">
-    <code data-type="sample-code">
-        import math
-        # Primeiro módulo (pode obter de qualquer fonte)
-        def obterCoeficientes():
-            return 1,-5,6
-        # Segundo módulo
-        def calcDelta(a,b,c):
-            delta = b**2 - 4*a*c
-            if delta < 0:
-                return float('nan')
-            else:
-                return delta
-        # Terceiro módulo
-        def calcRaizes(a,b,c):
-            delta = calcDelta(a,b,c)
-            if math.isnan(delta):
-                print('Não possui raízes reais')
-            elif delta == 0:
-                raiz = -b / 2*a
-                print('Possui apenas uma raiz: ',raiz)
-            else:
-                x1 = (-b + math.sqrt(delta)) / 2*a
-                x2 = (-b - math.sqrt(delta)) / 2*a
-                print('X1: ',x1,', X2: ',x2)
-        # Invocando os módulos
-        if __name__ == '__main__':
-            a,b,c = obterCoeficientes()
-            calcRaizes(a,b,c)
-    </code>
-</div>
+Vamos ver um exemplo separando os três módulos em funções:
+```
+import math
+# Primeiro módulo (pode obter de qualquer fonte)
+def obterCoeficientes():
+    return 1,-5,6
+# Segundo módulo
+def calcDelta(a,b,c):
+    delta = b**2 - 4*a*c
+    if delta < 0:
+        return float('nan')
+    else:
+        return delta
+# Terceiro módulo
+def calcRaizes(a,b,c):
+    delta = calcDelta(a,b,c)
+    if math.isnan(delta):
+        print('Não possui raízes reais')
+    elif delta == 0:
+        raiz = -b / 2*a
+        print('Possui apenas uma raiz: ',raiz)
+    else:
+        x1 = (-b + math.sqrt(delta)) / 2*a
+        x2 = (-b - math.sqrt(delta)) / 2*a
+        print('X1: ',x1,', X2: ',x2)
+# Invocando os módulos
+if __name__ == '__main__':
+    a,b,c = obterCoeficientes()
+    calcRaizes(a,b,c)
+```
 
 **__name__**
 
@@ -151,6 +141,8 @@ Podemos colocar cada função em um arquivo diferente:
             raizes.calcRaizes(a,b,c)
 
 ```
+
+Na verdade, no módulo **calculador.py** esse "if" nem era muito necessário, mas é de bom tom colocar em todo módulo que possui comandos imediatos. 
 
 É só executar: ```python calculador.py```
 
