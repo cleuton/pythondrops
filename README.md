@@ -1,2 +1,5 @@
+![](./python-drops.png)
 # pythondrops
-Python drops &amp; technology
+## Python drops &amp; technology
+
+(c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
