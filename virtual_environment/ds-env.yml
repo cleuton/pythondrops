@@ -1,0 +1,14 @@
+name: datascience
+dependencies:
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - scipy
+  - jupyter
+  - matplotlib
+  - statsmodels
+  - python=3.6
+  - pip:
+    - tensorflow
+    - tensorflow-tensorboard
