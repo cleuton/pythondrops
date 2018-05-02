@@ -8,7 +8,7 @@
 
 Uma das necessidades que sempre aparecem é a de servir recursos oriundos de Bancos de dados. Em REST, o cliente não deve se preocupar de onde vieram e como são armazenados os recursos, e o Servidor deve ser transparente quanto a isso. 
 
-Já vimos como criar [**Clientes e Servidores HTTP**](./clientes_servidores) em python, agora, vamos criar uma app servidora simples, porém completa. 
+Já vimos como criar [**Clientes e Servidores HTTP**](../clientes_servidores) em python, agora, vamos criar uma app servidora simples, porém completa. 
 
 ## O caso de estudo 
 
@@ -77,7 +77,7 @@ E precisamos instalar algumas coisinhas mais:
 
 ## Database storage
 
-Eu vou criar um [**módulo**](./modulos_imports) com as funções de persistência da aplicação. Com isso, eu diminuo o acoplamento entre o Servidor e o SGBD utilizado. Este módulo exportará duas funções:  
+Eu vou criar um [**módulo**](../modulos_imports) com as funções de persistência da aplicação. Com isso, eu diminuo o acoplamento entre o Servidor e o SGBD utilizado. Este módulo exportará duas funções:  
 
 - storeTemp(latitude, longitude, dataMedicao, temperatura)
 - getTemps(dataHoje)
