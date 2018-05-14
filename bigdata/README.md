@@ -121,7 +121,7 @@ Se um script Python for executado, ele começará a executar as linhas imediatas
 
 O pacote “pyspark” contém as classes necessárias para trabalharmos com Spark na linguagem Python: SparkConf e SparkContext. Vamos analisar a estrutura geral do código: 
 
-**1 – Inicialização do código: **
+**Inicialização do código**
 
 No bloco final do programa, dentro do “if __name__ == "__main__" temos o código que inicializa o Spark, criando uma instância de SparkConf. Esta instância serve para configurarmos o uso do Spark, passando, entre outras coisas, o nome da aplicação e quem será o nó “master” do Spark. Se estivermos executando em Cluster, informamos a URL do nó Master no método “setMaster”. Se estivermos executando local (é o nosso caso), especificamos apenas “local”. Entre colchetes, especificamos o número de threads a serem utilizados. Um asterisco significa: Tudo, inclusive GPU.
 
@@ -129,7 +129,7 @@ Finalmente, criamos uma instância de “SparkContext”. Todos os métodos da A
 
 E pegamos o nome do arquivo do primeiro argumento passado ao programa, e invocamos a função “main”.
 
-**2 – Execução da tarefa: **
+**Execução da tarefa:**
 
 A função “main” recebe o nome do arquivo e executa a tarefa. Basicamente, ela: 
 
