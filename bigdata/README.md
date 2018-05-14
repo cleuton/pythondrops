@@ -19,13 +19,13 @@ O projeto Kuaray criou um modelo de sensor, movido à energia solar, capaz de co
 
 A instalação do Spark é um pouco mais complexa, logo, vamos devagar. 
 
-    1. Primeiramente, certifique-se que você tenha instalado a linguagem Java, na versão JDK (Java Development Kit): 
-        1. Abra um Terminal Linux ou Prompt de comandos;
-        2. Digite "javac -version";
-        3. Se houver algum erro, tipo "comando não encontrado", então você precisa instalar o Java JDK;
-        4. Caso contrário, pule a etapa 2;
-    2. Baixe o Java JDK 8.x (eu não testei com a versão 9). Se tiver problemas na instalação do Java, siga estes passos: https://www.devmedia.com.br/instalacao-e-configuracao-do-pacote-java-jdk/23749;
-    3. Agora, baixe um arquivo binário do Apache Spark: https://spark.apache.org/downloads.html; Escolha um executável já com o Hadoop junto.
+1.  Primeiramente, certifique-se que você tenha instalado a linguagem Java, na versão JDK (Java Development Kit): 
+- Abra um Terminal Linux ou Prompt de comandos;
+- Digite "javac -version";
+- Se houver algum erro, tipo "comando não encontrado", então você precisa instalar o Java JDK;
+- Caso contrário, pule a etapa 2;
+2. Baixe o Java JDK 8.x (eu não testei com a versão 9). Se tiver problemas na instalação do Java, siga estes passos: https://www.devmedia.com.br/instalacao-e-configuracao-do-pacote-java-jdk/23749;
+3. Agora, baixe um arquivo binário do Apache Spark: https://spark.apache.org/downloads.html; Escolha um executável já com o Hadoop junto.
 
 O arquivo do Spark que você baixou já é pré-compilado e pronto para usar. Podemos utilizá-lo imediatamente. Basta descompactar o arquivo "tgz" que você baixou, abrir uma janela Terminal (ou prompt de comandos) e ativar seu ambiente virtual. Então, navegue para a pasta "bin" da instalação do Spark e execute o comando: "./pyspark".
 
