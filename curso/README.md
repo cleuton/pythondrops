@@ -4,7 +4,7 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
-#ESTE CURSO É PATROCINADO POR:
+# ESTE CURSO É PATROCINADO POR:
 ![](http://3.bp.blogspot.com/--m88-Pxr1VM/W5Gn-4_Y6GI/AAAAAAAAbyk/bHW58YoW45UZJpTbXf0FWgv8uW0fADytwCK4BGAYYCw/s758/DF1C35B6-5AFC-4A2E-AF47-95657017D410.png)
 
 # Curso Básico de Python
