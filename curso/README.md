@@ -17,6 +17,6 @@ Em breve o curso estará completo, faltando apenas a última lição! O curso é
 3. [Tipos de dados e variáveis](https://github.com/cleuton/pythondrops/tree/master/curso/licao3);
 4. [Funções e módulos](https://github.com/cleuton/pythondrops/tree/master/curso/licao4);
 5. [I/O básico, **JSON** e **PostgreSQL**](https://github.com/cleuton/pythondrops/tree/master/curso/licao5);
-6. Orientação a objetos *em breve*;
+6. [Orientação a objetos](https://github.com/cleuton/pythondrops/tree/master/curso/licao6);
 
 Curta ai o [**programa exemplo do curso**](./maze)
