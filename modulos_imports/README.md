@@ -4,6 +4,8 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
+
 # PythonDrops 1: Módulos e Imports
 
 *Atenção: A não ser quando claramente especificado, todo código demonstrado é escrito em python versão 3.x em diante*
