@@ -4,6 +4,8 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
+
 # PythonDrops 5: Servindo MongoDB
 
 Uma das necessidades que sempre aparecem é a de servir recursos oriundos de Bancos de dados. Em REST, o cliente não deve se preocupar de onde vieram e como são armazenados os recursos, e o Servidor deve ser transparente quanto a isso. 
