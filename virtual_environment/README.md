@@ -4,6 +4,8 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
+
 # PythonDrops 2: python 2 e python 3
 
 É, caro amigo... Python 2 e Python 3 são incompatíveis. Python 3.x é a versão corrente, e python 2.x é legado. Você não quer desenvolver aplicações em uma plataforma "legada", não? 
