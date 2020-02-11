@@ -4,6 +4,8 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
+
 # Pythondrops 3: Packages
 
 Temos que finalizar algumas coisas antes de entrarmos mais a fundo no python. Para começar, vamos ver como o python procura os módulos que você importa. Vamos supor que você importe o módulo "A":
