@@ -4,6 +4,8 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
+
 # PythonDrops 6: Bigdata com Python & Spark
 
 Muito bem, agora chegou o momento de usarmos uma ferramenta de Big data e realizar uma análise. E vamos usar o Spark com a linguagem Python!
