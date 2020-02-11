@@ -4,6 +4,8 @@
 
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
+
 # Pythondrops 4: Clientes e servidores HTTP
 
 Nesse mundo de [**microsserviços**](http://www.obomprogramador.com/2015/03/micro-servicos-o-que-sao-e-para-que.html) é cada vez mais importante aprender a construir os dois lados da história: O frontend (cliente) e o backend (servidor).
