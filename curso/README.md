@@ -5,7 +5,7 @@
 (c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
 
 # ESTE CURSO É PATROCINADO POR:
-[![](./banner.png)](http://www.lcm.com.br/site/#livros/busca?term=data+science)
+[![](../banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
 
 # Curso Básico de Python
 
