@@ -1,4 +1,4 @@
-![](./python-drops.png)
+![](./logo.png)
 # pythondrops
 ## Python drops &amp; technology
 
@@ -6,7 +6,8 @@
 
 [![](./banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
 
-![](./new.png) [**Curso Básico de Python**](./curso)
+- O **Curso Básico de Python** está sendo atualizado e em breve lançaremos mais cursos em múltiplas plataformas. 
+    - Estamos reformulando o curso e criando mais cursos especializados para você, que estarão disponíveis pela [**Udemy**](http://udemy.com). Em breve!
 - [**Modulos e Imports**](./modulos_imports);
 - [**Virtual environment**](./virtual_environment);
 - [**Packages**](./packages);
