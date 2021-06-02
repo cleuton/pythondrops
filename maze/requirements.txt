@@ -1,1 +1,1 @@
-termcolor
+colorama
