@@ -2,7 +2,7 @@ from model.celula import Celula
 from model.stack import Stack
 from model import constantes
 from random import randint
-from termcolor import colored
+from colorama import Fore, Back, Style
 
 class Labirinto:
     
@@ -174,7 +174,7 @@ class Labirinto:
             linha3[2] = '+' if linha3[2] == '-' else '|'
         if self.caminho:
             if self._in_path(cel.y,cel.x):
-                linha2[1] = colored(' ', attrs=['reverse'])
+                linha2[1] = Back.RED + ' ' + Back.BLACK
         return [linha1,linha2,linha3]       
 
     def _insert(self,linhas,matriz,i,j):
