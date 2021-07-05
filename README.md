@@ -2,7 +2,13 @@
 # pythondrops
 ## Python drops &amp; technology
 
-(c) 2018 [**Cleuton Sampaio**](https://github.com/cleuton).
+(c) 2021 [**Cleuton Sampaio**](https://github.com/cleuton).
+
+![](./new.png)
+### Programação Backend com Python
+[![](./backend.png)](https://youtu.be/fls4TIP2720)
+Curso de programação backend com python. Nesse curso, você aprenderá a linguagem python e os recursos para criar backends usando: REST, HTTPS, AMQP, gRPC e AWS (Lambda). Esse curso será lançado na **Udemy** em breve, mas também teremos turmas online ao vivo. 
+Clique na imagem para ver o vídeo de introdução.
 
 [![](./banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
 
