@@ -174,7 +174,7 @@ class Labirinto:
             linha3[2] = '+' if linha3[2] == '-' else '|'
         if self.caminho:
             if self._in_path(cel.y,cel.x):
-                linha2[1] = Back.RED + ' ' + Back.BLACK
+                linha2[1] = Back.RED + ' ' + Back.RESET
         return [linha1,linha2,linha3]       
 
     def _insert(self,linhas,matriz,i,j):
