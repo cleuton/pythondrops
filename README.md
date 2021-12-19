@@ -20,3 +20,4 @@ Clique na imagem para ver a página do **curso**.
 - [**Clientes e Servidores HTTP**](./clientes_servidores)
 - [**Servindo MongoDB**](./servindo_mongodb)
 - [**Bigdata com Python & Spark**](./bigdata)
+- [**Tutorial de controle de acesso com JWT**](https://github.com/cleuton/jwt/blob/master/README.md)
