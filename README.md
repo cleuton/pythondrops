@@ -12,8 +12,7 @@ Clique na imagem para ver a página do **curso**.
 
 [![](./banner_livros2.png)](https://www.lcm.com.br/site/#livros/busca?term=cleuton)
 
-- O **Curso Básico de Python** está sendo atualizado e em breve lançaremos mais cursos em múltiplas plataformas. 
-    - Estamos reformulando o curso e criando mais cursos especializados para você, que estarão disponíveis pela [**Udemy**](http://udemy.com). Em breve!
+- [O **Curso Básico de Python** Está de volta!](./curso)
 - [**Modulos e Imports**](./modulos_imports);
 - [**Virtual environment**](./virtual_environment);
 - [**Packages**](./packages);
