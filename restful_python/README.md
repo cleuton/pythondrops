@@ -7,7 +7,7 @@
 Este é um exemplo simples, mas com boas práticas de projeto e implementação de servidores REST em Python. O foco é criar uma
 aplicação simples, com camadas bem definidas e boas práticas para servir de base para qualquer outro projeto. 
 
-Neste exemplo não utilizamos **ORM** para dar ideia de como deve funcionar da maneira mais básica possível. 
+Neste exemplo não utilizamos **ORM** para dar ideia de como deve funcionar da maneira mais básica possível. É um projeto simples.
 
 ## Antes de mais nada
 
