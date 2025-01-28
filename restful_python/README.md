@@ -50,7 +50,7 @@ Tudo deve funcionar sem problemas. Você também pode executar os testes (unitá
 
 ```shell
 cd .. # se não estiver na raiz do projeto
-python -m unittests discover -s tests
+python -m unittest discover -s tests
 ```
 
 ## Estrutura do projeto
