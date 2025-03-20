@@ -257,3 +257,99 @@ No exemplo eu separei as duas coisas: Você pode obter uma `Pessoa` e depois obt
 
 **E o many-to-many?**
 A mesma coisa! Como você resolve um relacionamento many-to-many em um database? Com uma tabela associativa. Depois é só implementar a cardinalidade e a direção do relacionamento no seu ORM.
+
+# Como executar o database e a aplicação em contêineres Docker
+
+Crie um Dockerfile para sua aplicação Python, juntamente com instruções para conectar ao banco de dados:
+
+```Dockerfile
+# Dockerfile
+FROM python:3.9-slim
+
+# Define variáveis de ambiente para o PostgreSQL
+ENV DB_HOST=meu_postgres
+ENV DB_PORT=5432
+ENV DB_USER=postgres
+ENV DB_PASSWORD=postgres
+ENV DB_NAME=postgres
+ENV FLASK_APP=server.py
+ENV FLASK_ENV=development
+
+WORKDIR /app
+
+# Instala dependências do sistema para psycopg2
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instala dependências do Python
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia toda a aplicação
+COPY . .
+
+EXPOSE 5000
+
+CMD ["flask", "run", "--host=0.0.0.0"]
+```
+
+**requirements.txt** (deve incluir as dependências necessárias):
+```
+Flask==2.0.3
+psycopg2-binary==2.9.3
+```
+
+Para executar a aplicação, siga estes passos:
+
+1. Primeiro crie uma rede Docker para os containers se comunicarem:
+```bash
+docker network create minha-rede
+```
+
+2. Execute o container do PostgreSQL na rede criada:
+```bash
+docker run -d \
+  --name meu_postgres \
+  --network minha-rede \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=postgres \
+  -p 5432:5432 \
+  -v "$(pwd)/init.sql":/docker-entrypoint-initdb.d/init.sql \
+  postgres:latest
+```
+
+3. Construa a imagem da aplicação Python:
+```bash
+docker build -t minha-app-python .
+```
+
+4. Execute o container da aplicação Python na mesma rede:
+```bash
+docker run -d \
+  --name minha-app \
+  --network minha-rede \
+  -p 5000:5000 \
+  minha-app-python
+```
+
+Principais pontos de configuração:
+
+1. **Rede Docker**: Ambos containers devem estar na mesma rede para se comunicarem usando os nomes dos serviços
+
+2. **Variáveis de Ambiente**:
+   - `DB_HOST`: Nome do container do PostgreSQL (`meu_postgres`)
+   - `DB_PORT`: Porta padrão do PostgreSQL
+   - `DB_USER` e `DB_PASSWORD`: Credenciais definidas no container do Postgres
+   - `FLASK_*`: Configurações do Flask
+
+3. **Dependências**:
+   - `libpq-dev` e `gcc` são necessários para compilar o psycopg2
+   - `psycopg2-binary` para conexão com PostgreSQL
+
+4. **Comunicação**:
+   - A aplicação Python acessará o banco de dados usando `meu_postgres:5432`
+   - O Flask é configurado para escutar em `0.0.0.0` para aceitar conexões externas
+
+Certifique-se que seu arquivo `init.sql` cria o banco de dados e tabelas necessárias, e que o connection pool na aplicação está usando as variáveis de ambiente definidas para configurar a conexão com o banco de dados.
