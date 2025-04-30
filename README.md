@@ -5,6 +5,9 @@
 (c) 2021 [**Cleuton Sampaio**](https://github.com/cleuton).
 
 ![](./new.png)
+### Reconhecimento de voz sem IA
+Aprenda a criar interface de [**comandos por voz**](./audio_fft/) sem utilizar modelos de IA. 
+
 ### Exemplo RESTful Python
 [**Veja este exemplo**](./restful_python/) de aplicação REST WSGI com boas práticas para você usar em qualquer projeto. 
 
