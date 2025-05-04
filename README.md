@@ -5,6 +5,9 @@
 (c) 2021 [**Cleuton Sampaio**](https://github.com/cleuton).
 
 ![](./new.png)
+### Detector de imagens geradas por IA
+Use esse modelo para saber se uma imagem é real ou criada por IA.
+
 ### Reconhecimento de voz sem IA
 Aprenda a criar interface de [**comandos por voz**](./audio_fft/) sem utilizar modelos de IA. 
 
