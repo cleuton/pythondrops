@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Detector estatístico de imagens geradas por IA
-Baseado em características de ruído, frequência, cor e textura
-"""
 
 import cv2
 import numpy as np

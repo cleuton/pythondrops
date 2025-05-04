@@ -20,40 +20,27 @@ Este código funciona como um **"detetive de imagens"** que busca pistas estatí
 Ele usa quatro técnicas principais e um classificador, seguindo este fluxo:
 
 ### 1. Análise de Ruído Residual 
-- **O que faz:** 
-  - Aplica um filtro de suavização na imagem e compara com a original. 
-  - A diferença entre elas revela o "ruído residual" (pequenas imperfeições naturais).
-- **Por quê:** 
+Aplica um filtro de suavização na imagem e compara com a original pois a diferença entre elas revela o "ruído residual" (pequenas imperfeições naturais).
   - **Câmeras reais** deixam um padrão de ruído único (como uma "impressão digital" do sensor). 
   - **Imagens de IA** têm ruído mais artificial ou uniforme (como uma textura "perfeita demais").
 
 ### 2. Análise de Frequências 
-- **O que faz:** 
-  - Divide a imagem em blocos e analisa a distribuição de detalhes finos (altas frequências) vs. áreas suaves (baixas frequências).
-- **Por quê:** 
+Divide a imagem em blocos e analisa a distribuição de detalhes finos (altas frequências) vs. áreas suaves (baixas frequências).
   - **Imagens reais** têm muitos detalhes microscópicos (como pelos ou grãos de areia). 
   - **Imagens de IA** podem perder esses detalhes ou ter padrões repetitivos (como linhas "borradas" ou texturas pouco naturais).
 
 ### 3. Análise de Cores 
-- **O que faz:** 
-  - Analisa estatísticas das cores (média, variação, assimetria) em três canais: brilho (Y), azul (Cb) e vermelho (Cr).
-- **Por quê:** 
+Analisa estatísticas das cores (média, variação, assimetria) em três canais: brilho (Y), azul (Cb) e vermelho (Cr).
   - **Câmeras reais** capturam cores com variações naturais e imperfeitas. 
   - **Imagens de IA** podem ter cores "suavizadas" ou tons artificialmente concentrados (como um verde "perfeito" demais em folhas).
 
 ### 4. Análise de Textura 
-- **O que faz:** 
-  - Usa o algoritmo **LBP** para mapear padrões locais de textura (como linhas, curvas, pontos) e cria um histograma desses padrões.
-- **Por quê:** 
+Usa o algoritmo **LBP** para mapear padrões locais de textura (como linhas, curvas, pontos) e cria um histograma desses padrões.
   - **Texturas reais** são variadas e complexas (como a pele humana ou tecido). 
   - **Imagens de IA** podem ter padrões repetitivos ou simplificados (como um tecido "clone" em várias partes da imagem).
 
 ### 5. Classificador Final 
-- **O que faz:** 
-  - Combina todas as pistas coletadas em uma lista de características. 
-  - Treina um modelo de **Regressão Logística** para aprender a diferença entre imagens reais e de IA. 
-  - Gera uma probabilidade (%) de a imagem ser artificial.
-- **Por quê:** 
+Combina todas as pistas coletadas em uma lista de características e treina um modelo de **Regressão Logística** para aprender a diferença entre imagens reais e de IA, gerando uma probabilidade (%) de a imagem ser artificial.
   - A Regressão Logística é simples, rápida e explicável – ideal para entender quais características são mais importantes.
 
 ### Pipeline Completo:
