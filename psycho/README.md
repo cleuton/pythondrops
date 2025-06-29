@@ -30,7 +30,7 @@ O resultado é um mosaico de ondas radiais e angulares, espelhado em triângulos
 
 ## A implementação
 
-Aqui está uma explicação passo a passo, em linguagem simples, de como o código em Python foi montado e de como ele gera e renderiza o efeito de túnel caleidoscópico:
+Aqui está uma explicação de como o código em Python foi montado e de como ele gera e renderiza o efeito de túnel caleidoscópico:
 
 1. **Bibliotecas usadas**
 
