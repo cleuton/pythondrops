@@ -15,7 +15,7 @@ Legal, né? Cara, esse foi ouvindo **Led Zeppelin**, **Deep Purple** e **Yes**..
 A ideia central é usar geometria polar e funções de onda para montar um túnel que se repete como num caleidoscópio e ainda “pulse” no tempo. Primeiro você cria uma grade de pontos X e Y que variam de –1 a 1, de modo que o meio da tela seja (0,0). Para cada ponto dessa grade, calcula-se:
 
 1. **R**, a distância do ponto ao centro, usando a fórmula de círculo $R = \sqrt{X^2 + Y^2}$.
-2. **Θ**, o ângulo relativo ao eixo X, com $Θ = \operatorname{atan2}(Y, X)$.
+2. **Θ**, o ângulo relativo ao eixo X, com $Θ = atan2(Y, X).
 
 Em seguida, “dobra-se” esse ângulo em fatias iguais — se for 16 segmentos, você pega o ângulo original e aplica um módulo para repetir o padrão a cada $2\pi/16$. Ainda faz um valor absoluto para simular o reflexo de um caleidoscópio, como se cada fatia fosse um espelho.
 
