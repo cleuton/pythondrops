@@ -4,6 +4,8 @@
 
 [**Cleuton Sampaio**](https://linkedin.com/in/cleutonsampaio).
 
+[**ENGLISH VERSION**](./ENGLISH.md).
+
 Veja no [**repositório**](https://github.com/cleuton/pythondrops/tree/master/audio_fft). 
 
 Entender o problema e o algoritmo (G-21 do Clean Code) é essencial para criar uma solução eficaz. Muita gente corre atrás de IA, seja para 
