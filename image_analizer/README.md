@@ -2,6 +2,8 @@
 
 # Detector de Imagens Geradas por IA
 
+[**ENGLISH VERSION README**](./ENGLISH.md) 
+
 [**Cleuton Sampaio**](https://linkedin.com/in/cleutonsampaio)
 
 [**Repositório**](https://github.com/cleuton/pythondrops/tree/master/image_analizer)
