@@ -1,6 +1,6 @@
-Here is a clear and accurate English translation:
+![](./real_fake.png)
 
----
+# Is it real or fake? 
 
 This code works as an “image detective” that looks for statistical clues to determine whether a picture was created by a real camera or by AI.
 
