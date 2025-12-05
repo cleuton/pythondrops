@@ -71,7 +71,3 @@ Use edge masks (Canny) before spectral analysis.
 Expand color analysis to HSV or LAB spaces.
 Balance the dataset (equal numbers of real and AI images).
 Switch to an RBF-kernel SVM to capture nonlinear patterns.
-
----
-
-If you want, I can also rewrite this into documentation format (README), technical article style, or a simplified explanation for non-technical users.
