@@ -5,6 +5,9 @@
 (c) 2021 [**Cleuton Sampaio**](https://github.com/cleuton).
 
 ![](./new.png)
+### Busca semântica com PgVector
+O projeto [**busca semântica**](./busca_semantica_pgvector/) cria um vector database e faz buscas por similaridade. 
+
 ### Detector de imagens geradas por IA
 Use [**esse modelo**](./image_analizer/) para saber se uma imagem é real ou criada por IA.
 

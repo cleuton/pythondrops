@@ -1,0 +1,7 @@
+psycopg[binary]
+sentence-transformers
+python-dotenv
+uvicorn
+fastapi
+pydantic
+pgvector
