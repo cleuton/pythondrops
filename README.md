@@ -5,6 +5,9 @@
 (c) 2021 [**Cleuton Sampaio**](https://github.com/cleuton).
 
 ![](./new.png)
+### SSE e long-lived connections demo - Python / React
+O projeto [**sse-project**](./sse-project) demonstra o uso de Server-side events e conexões de longa duração.
+
 ### Busca semântica com PgVector
 O projeto [**busca semântica**](./busca_semantica_pgvector/) cria um vector database e faz buscas por similaridade. 
 
