@@ -8,6 +8,72 @@ This project demonstrates a production-grade implementation of Server-Sent Event
 
 Traditionally, the web operates on a Request-Response model: the client requests data, the server responds, and the connection closes. Long-lived Connections break this paradigm by keeping a communication channel open between client and server. This allows data to flow continuously without the overhead of renegotiating a connection (handshake) for every new piece of information.
 
+#### 1. Server Initiation: HTTP Protocol Optimization
+
+The server initiates the long-lived connection by simply altering the semantics of the standard HTTP response, without changing the protocol.
+
+* **Content-Type:** The server sends `Content-Type: text/event-stream`. This notifies the browser that the response is not a static document, but a continuous data stream.
+* **Persistent Connection (Keep-Alive):** The server utilizes the native HTTP/1.1 mechanism (or HTTP/2 frames) to keep the TCP socket open. It does not send the message body termination character that would normally signal the end of the request.
+* **Immediate Flush:** The server must ensure that the output buffer is flushed immediately after each `yield`; otherwise, data would remain stuck in the server buffer until reaching a specific size, destroying the "real-time" experience.
+
+#### 2. The Client's Role: Maintenance and Resilience
+
+For the client, the secret to "long-duration" lies in the implementation of the `EventSource` interface within the browser engine:
+
+* **Incremental Reading:** The browser does not wait for the end of the request to process data. It reads the TCP socket in chunks. Whenever it encounters the byte sequence `\n\n` (two line feeds), it triggers the event in JavaScript.
+* **Connection State Management:** The browser monitors the state of the TCP socket. If the socket is closed (receiving a `FIN` or `RST` packet), the `EventSource` API does not terminate the object; it changes its internal state to `CONNECTING`.
+* **Automatic Reconnection and Continuity:** The client schedules a new silent HTTP request. To ensure continuity, the browser sends the `Last-Event-ID` header containing the ID of the last successfully processed event. This allows the server to "catch up" on data lost during the downtime.
+
+**HTTP/2** resolves the biggest bottleneck for SSE in HTTP/1.1: the limit of connections per domain (usually 6).
+
+#### How HTTP/2 Improves SSE
+
+* **Multiplexing:** In HTTP/1.1, each SSE stream occupied an entire TCP socket. If you had 6 tabs open with SSE, the browser could not load anything else from your site. In HTTP/2, multiple SSE streams travel within a **single TCP connection** using different binary "frames."
+* **Resource Efficiency:** It drastically reduces the overhead of opening connections (TCP/TLS handshakes) and memory consumption on both the server and client.
+* **Prioritization:** The protocol allows the browser to prioritize critical resources (like CSS/JS) while the SSE stream continues running in the background.
+
+In HTTP/1.1, SSE is a **"Hanging GET"** that blocks a connection slot. In HTTP/2, SSE is just another **Stream ID** within an already established binary tunnel, eliminating concurrency limits and the cost of new sockets.
+
+#### And how to run with HTTP/2?
+
+To run FastAPI with **HTTP/2**, Uvicorn requires the use of **SSL/TLS**, as modern browsers do not support multiplexing on unencrypted connections.
+
+##### 1. Requirements
+
+You will need the `httptools` library and certificates (even if self-signed).
+
+```bash
+pip install uvicorn[standard]
+
+```
+
+##### 2. Python Configuration
+
+In your `main.py` file (or via CLI), you must point to the certificate files:
+
+```python
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=8443,
+        ssl_keyfile="./key.pem",
+        ssl_certfile="./cert.pem",
+        http="h2"  # Forces HTTP/2 support
+    )
+
+```
+
+##### 3. Impact
+
+* **Binary Framing:** HTTP/2 fragments SSE messages into small binary frames. This prevents one stream from "clogging" the connection, allowing other data (images, scripts) to pass through simultaneously.
+* **Header Compression (HPACK):** Repetitive SSE headers are compressed, saving bandwidth on long-lived connections that undergo frequent reconnections.
+
+#### Summary
+
+With HTTP/2 + SSL, the limit of 6 SSE connections per domain disappears. The user can open dozens of tabs of your dashboard without stalling the loading of the rest of the site, all over a single TCP tunnel.
+
 ### Server-Sent Events (SSE) vs. WebSockets
 
 * SSE: A standard HTTP-based protocol that allows servers to push data to clients unidirectionally. It is significantly simpler to implement and more resource-efficient for scenarios where the client does not need to send data back through the same channel.
